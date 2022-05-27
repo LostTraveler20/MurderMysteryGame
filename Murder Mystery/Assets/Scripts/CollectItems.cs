@@ -28,4 +28,15 @@ public class CollectItems : MonoBehaviour
 
         //add to player inventory
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == player)
+        {
+            GameObject tmp = gameObject;
+
+            player.GetComponent<PlayerInventory>().AddItem(tmp);
+            Destroy(gameObject);
+        }
+    }
 }

@@ -23,6 +23,11 @@ public class PlayerInventory : MonoBehaviour
 
     public void AddItem(GameObject item)
     {
+        currentItemCount++;
 
+        if (currentItemCount <= itemMaxCount)
+        {
+            itemsInInventory[currentItemCount] = item;
+        }
     }
 }
